@@ -1,0 +1,12 @@
+{
+  "name": "open-source-contribution-finder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A beginner-friendly finder for active, unassigned GitHub issues.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

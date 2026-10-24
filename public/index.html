@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f5">
+    <meta name="description" content="Find a beginner-friendly open-source issue that fits what you know, then learn the next step.">
+    <title>Patchwork — Find your first open-source issue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Patchwork home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M12 6v7a5 5 0 0 0 5 5h2a5 5 0 0 1 5 5v7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="12" cy="6" r="4" fill="currentColor"/>
+              <circle cx="24" cy="30" r="4" fill="currentColor"/>
+              <circle cx="25" cy="18" r="4" fill="#b7e79a"/>
+            </svg>
+          </span>
+          <span>patchwork<span class="brand-dot">.</span></span>
+        </a>
+        <a class="header-help" href="#how-it-works">How to get started <span aria-hidden="true">↓</span></a>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">A guide for your first contribution</p>
+            <h1 id="hero-title">Find an issue you can <span>actually start.</span></h1>
+            <p class="hero-description">Pick a language or skill you know. Patchwork brings back recent, unassigned GitHub issues and shows the clues behind each one.</p>
+            <a class="hero-link" href="#discover">Find my first issue <span aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="guide-card" id="how-it-works" aria-labelledby="guide-title">
+            <div class="guide-heading">
+              <div><p class="guide-kicker">FIRST TIME CONTRIBUTING?</p><h2 id="guide-title">Before you start coding</h2></div>
+            </div>
+            <ol class="guide-steps">
+              <li><span class="step-number">1</span><span><strong>Choose a task you understand</strong><small>A small, specific issue is a good place to begin.</small></span></li>
+              <li><span class="step-number">2</span><span><strong>Read before you code</strong><small>Check the project guide and the latest comments.</small></span></li>
+              <li><span class="step-number">3</span><span><strong>Ask the maintainers</strong><small>Some projects want to approve or assign work first.</small></span></li>
+            </ol>
+            <a class="guide-link" href="https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-open-source" target="_blank" rel="noreferrer">GitHub’s guide to contributing <span aria-hidden="true">↗</span></a>
+          </aside>
+        </section>
+
+        <section class="search-panel" id="discover" aria-labelledby="search-title">
+          <div class="search-heading">
+            <div>
+              <p class="section-kicker">CHOOSE YOUR STARTING POINT</p>
+              <h2 id="search-title">What do you know already?</h2>
+              <p class="section-description">A language, a tool, or even writing docs is enough to get started.</p>
+            </div>
+            <div class="live-label"><span class="live-dot" aria-hidden="true"></span> Live GitHub issues</div>
+          </div>
+
+          <form id="search-form" class="search-form">
+            <label class="field field-language">
+              <span class="field-label">Language</span>
+              <select id="language" name="language" aria-describedby="language-help">
+                <option value="">Any language</option>
+                <option>JavaScript</option>
+                <option>TypeScript</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>Go</option>
+                <option>Rust</option>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>C++</option>
+                <option>C#</option>
+                <option>Ruby</option>
+                <option>PHP</option>
+              </select>
+              <small id="language-help">Choose one you’ve used before, or leave it as Any language.</small>
+            </label>
+            <label class="field field-skills">
+              <span class="field-label">Tools or other skills <span class="field-optional">optional</span></span>
+              <input id="skills" name="skills" type="text" maxlength="100" placeholder="React, CSS, testing, or documentation" aria-describedby="skills-help skills-hint">
+              <small id="skills-help">Add one or more skills, separated by commas.</small>
+            </label>
+
+            <div class="form-footer">
+              <details class="advanced-filters">
+                <summary>Advanced filters <span aria-hidden="true">＋</span></summary>
+                <div class="advanced-fields">
+                  <label class="field field-level">
+                    <span class="field-label">Experience level</span>
+                    <select id="level" name="level" aria-describedby="level-help">
+                      <option value="beginner">First contribution</option>
+                      <option value="any">Show me everything</option>
+                      <option value="intermediate">Ready for a stretch</option>
+                    </select>
+                    <small id="level-help">We’ll start with first-contribution issues.</small>
+                  </label>
+                  <label class="field field-freshness">
+                    <span class="field-label">Last updated</span>
+                    <select id="fresh-days" name="freshDays" aria-describedby="freshness-help">
+                      <option value="30">Within 30 days</option>
+                      <option value="90" selected>Within 90 days</option>
+                      <option value="180">Within 180 days</option>
+                    </select>
+                    <small id="freshness-help">Newer issues are more likely to be active.</small>
+                  </label>
+                </div>
+              </details>
+              <button id="search-button" class="search-button" type="submit">
+                <span>Find beginner issues</span><span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="popular-skills" aria-label="Suggested skills">
+            <span>Or add a quick pick:</span>
+            <button type="button" class="skill-chip" data-skill="JavaScript">JavaScript</button>
+            <button type="button" class="skill-chip" data-skill="Python">Python</button>
+            <button type="button" class="skill-chip" data-skill="CSS">CSS</button>
+            <button type="button" class="skill-chip" data-skill="documentation">Writing docs</button>
+          </div>
+          <p id="skills-hint" class="quick-pick-hint" aria-live="polite">Choose a suggestion, then find issues when you’re ready.</p>
+        </section>
+
+        <section class="results-section" aria-labelledby="results-title">
+          <div class="results-heading">
+            <div>
+              <p class="section-kicker">A FEW PLACES TO BEGIN</p>
+              <h2 id="results-title">Issues to explore <span id="result-count" class="result-count"></span></h2>
+              <p class="results-subtitle">Read the task, then check the project’s instructions before you volunteer.</p>
+            </div>
+            <div class="results-tools">
+              <button id="saved-toggle" class="saved-toggle" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> Saved <span id="saved-count" class="saved-count">0</span></button>
+              <label class="sort-control"><span>Sort</span>
+                <select id="sort-order" aria-label="Sort issues">
+                  <option value="match">Best fit</option>
+                  <option value="fresh">Recently updated</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+          <div id="issue-list" class="issue-list" aria-live="polite"></div>
+          <p class="reliability-note"><span aria-hidden="true">ⓘ</span> Issue status can change. Always read the latest comments and confirm with the maintainer before you begin.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand footer-brand" href="./" aria-label="Patchwork home"><span class="brand-mark" aria-hidden="true">⌘</span><span>patchwork<span class="brand-dot">.</span></span></a>
+        <p>Made for the first step into open source.</p>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">Powered by GitHub <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </body>
+</html>
